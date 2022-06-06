@@ -1,0 +1,33 @@
+<h1>All Teams</h1>
+
+<table>
+
+    <tr>
+        <th>Name</th>
+        <th>Sport</th>
+        <th>Borough</th>
+        <th>Minimum Age</th>
+        <th>Description</th>
+        <th>Level</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Phone</th>
+    </tr>
+
+<% teams.forEach(function(team) { %>
+
+    <tr>
+        <td><%= team.name%></td>
+        <td><%= team.sport%></td>
+        <td><%= team.borough%></td>
+        <td><%= team.minAge%></td>
+        <td><%= team.description%></td>
+        <td><%= team.level%></td>
+        <td><%= team.address%></td>
+        <td><%= team.contactEmail%></td>
+        <td><%= team.contactPhone%></td>
+    </tr>
+
+<% }) %>
+
+</table>

@@ -16,11 +16,12 @@ const PORT = process.env.PORT;
 
 
 // Import Routes
-const indexRouter = require("./routes/index")
+const indexRouter = require("./routes/index");
+const teamsRouter = require("./routes/teams");
 
 // Mount Routes
-app.use("/", indexRouter)
-
+app.use("/", indexRouter);
+app.use("/", teamsRouter);
 
 
 
