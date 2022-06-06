@@ -1,9 +1,25 @@
 const express = require('express');
 
+const expressLayouts = require('express-ejs-layouts');
+
+require('dotenv').config();
+
 const app = express();
 
+app.use(expressLayouts);
+app.use(express.static("public"));
+
+app.set("view engine", "ejs");
+
 // create port
-const PORT = 3000;
+const PORT = process.env.PORT;
+
+
+// Import Routes
+
+// Mount Routes
+
+
 
 app.listen(PORT, () => {
     console.log('listening on port 3000')
@@ -12,11 +28,10 @@ app.listen(PORT, () => {
 
 // create mongo db
 const mongoose =require('mongoose');
-mongoose.connect("mongodb://localhost:27017/london_teams", {
+
+mongoose.connect(process.env.mongoDBURL, {
     useNewUrlParser:true,
     useUnifiedTopology:true}, ()=> {
         console.log('connected to london_teams db')
     }
 );
-
-
