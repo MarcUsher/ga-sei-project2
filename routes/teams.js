@@ -7,5 +7,6 @@ const teamCtrl = require("../controllers/teams")
 router.get("/teams/index", teamCtrl.teams_index_get) // api call is index_get
 router.get("/teams/add", teamCtrl.teams_add_get)
 router.post("/teams/add", teamCtrl.teams_add_post)
+router.get("/teams/detail", teamCtrl.teams_details_get)
 
 module.exports = router;

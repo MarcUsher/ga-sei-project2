@@ -34,3 +34,17 @@ exports.teams_add_post = (req, res) => {
         res.send("Sorry there's an error")
     });
 }
+
+// show Team Details - when user clicks on a team
+exports.teams_details_get = (req, res) => {
+    Team.findById(req.query.id)
+    .then((team)=>{
+        res.render("teams/detail", {team});
+    })
+    .catch((err)=>{
+        console.log(err);
+        res.send("sorry there is an error")
+    })
+    
+};
+
