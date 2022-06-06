@@ -39,7 +39,7 @@ exports.teams_add_post = (req, res) => {
 exports.teams_details_get = (req, res) => {
     Team.findById(req.query.id)
     .then((team)=>{
-        res.render("teams/detail", {team});
+        res.render("teams/detail", {team, moment});
     })
     .catch((err)=>{
         console.log(err);
@@ -48,3 +48,46 @@ exports.teams_details_get = (req, res) => {
     
 };
 
+
+
+// API for EDIT - GET and PUT
+
+exports.teams_edit_get = (req, res) => {
+
+    Team.findById(req.query.id)
+    .then((team) => {
+        res.render("teams/edit", {team, moment})        
+    })
+    .catch((err) => {
+        console.log(err);
+        res.send("Sorry there was an error");
+    })
+}
+
+
+exports.teams_edit_put = (req, res) => {
+    Team.findByIdAndUpdate(req.body.id, req.body)
+    .then(() => {
+        res.redirect("/teams/index")
+    })
+    .catch((err) => {
+        console.log(err);
+        res.send("Sorry there was an error");
+    })
+}
+
+
+
+
+
+// API for DELETE - GET
+exports.teams_delete_get = (req, res) => {
+    Team.findByIdAndDelete(req.query.id)
+    .then(() => {
+        res.redirect("/teams/index");
+    })
+    .catch((err) => {
+        console.log(err);
+        res.send("Sorry there was an error");
+    })
+}

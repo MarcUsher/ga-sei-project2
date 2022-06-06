@@ -12,6 +12,10 @@
         <th>Address</th>
         <th>Email</th>
         <th>Phone</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>Created At</th>
+        <th>Updated At</th>
     </tr>
 
 <% teams.forEach(function(team) { %>
@@ -26,6 +30,14 @@
         <td><%= team.address%></td>
         <td><%= team.contactEmail%></td>
         <td><%= team.contactPhone%></td>
+        <td>
+            <a href="/teams/edit?id=<%=team.id%>">Edit</a>
+        </td>
+        <td>
+            <a href="/teams/delete?id=<%=team.id%>">Delete</a>
+        </td>
+        <td><%= moment(team.createdAt).fromNow() %></td>
+        <td><%= moment(team.updatedAt).fromNow() %></td>
     </tr>
 
 <% }) %>

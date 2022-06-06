@@ -7,3 +7,6 @@
         <div><%= team.address%></div>
         <div><%= team.contactEmail%></div>
         <div><%= team.contactPhone%></div>
+        <hr>
+        <div>Created at: <%= moment(team.createdAt).fromNow() %></div>
+        <div>Updated at: <%= moment(team.updatedAt).fromNow() %></div>
