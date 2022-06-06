@@ -19,11 +19,13 @@ const PORT = process.env.PORT;
 const indexRouter = require("./routes/index");
 const teamsRouter = require("./routes/teams");
 const sportsRouter = require("./routes/sports");
+const boroughRouter = require("./routes/boroughs")
 
 // Mount Routes
 app.use("/", indexRouter);
 app.use("/", teamsRouter);
 app.use("/", sportsRouter);
+app.use("/", boroughRouter);
 
 
 
