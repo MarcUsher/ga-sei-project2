@@ -1,0 +1,32 @@
+<h2>Edit <%= sports.name%></h2>
+<form method="POST" action="/sports/update?_method=PUT">
+
+    <div>
+        <label>Name</label>
+        <input type="text" name="name" value="<%= sports.name%>" />
+    </div>
+    <div>
+        <label>Teams</label>
+        <input type="text" name="teams" value="<%= sports.teams%>" />
+    </div>
+    <div>
+        <label>Borough</label>
+        <input type="text" name="boroughs" value="<%= sports.boroughs%>" />
+    </div>
+    <div>
+        <label>Description</label>
+        <textarea name="description" value="<%= sports.description%>"></textarea>
+    </div>
+    <div>
+        <label>Image URL</label>
+        <input type="text" name="imageUrl" value="<%= sports.imageUrl%>" />
+    </div>
+
+    <input type="hidden" name="id" value="<%= sports._id%>" />
+
+    <br>
+
+    <button type="submit">Add sports</button>
+
+
+</form>
