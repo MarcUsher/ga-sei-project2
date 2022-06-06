@@ -1,0 +1,14 @@
+<h2><%= borough.name%></h2>
+<div>Postcodes in this Borough: <%= borough.postcodes%></div>
+<div>Sports: <%= borough.sports%></div>
+<div><a href="/teams/index">Teams</a>: <%= borough.teams%></div>
+<hr>
+<div>Created: <%= moment(borough.createdAt).fromNow() %></div>
+<div>Updated: <%= moment(borough.updatedAt).fromNow() %></div>
+<hr>
+<div>
+    <a href="/boroughs/edit?id=<%=borough.id%>">Edit</a>
+</div>
+<div>
+    <a href="/boroughs/delete?id=<%=borough.id%>">Delete</a>
+</div>
