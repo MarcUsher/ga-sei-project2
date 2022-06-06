@@ -17,7 +17,7 @@
 <% teams.forEach(function(team) { %>
 
     <tr>
-        <td><%= team.name%></td>
+        <td><a href="/teams/detail?id=<%=team.id%>"><%= team.name%></a></td>
         <td><%= team.sport%></td>
         <td><%= team.borough%></td>
         <td><%= team.minAge%></td>
