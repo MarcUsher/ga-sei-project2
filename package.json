@@ -1,0 +1,25 @@
+{
+  "name": "ga-project-02",
+  "version": "1.0.0",
+  "description": "London Teams Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.generalassemb.ly/rakitent/ga-project-02.git"
+  },
+  "author": "Marc Usher & Richard Afrane-Kesey",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-ejs-layouts": "^2.5.1",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.3",
+    "mongoose": "^6.3.5"
+  }
+}
