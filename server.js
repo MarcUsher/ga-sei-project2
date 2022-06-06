@@ -16,8 +16,11 @@ const PORT = process.env.PORT;
 
 
 // Import Routes
+const indexRouter = require("./routes/index")
 
 // Mount Routes
+app.use("/", indexRouter)
+
 
 
 
