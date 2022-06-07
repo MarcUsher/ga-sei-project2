@@ -34,8 +34,17 @@ exports.teams_add_get = (req, res) => {
 
 exports.teams_add_post = (req, res) => {
     let team = new Team(req.body);
-    team.save()
+    console.log(req.body)
+    console.log(req.body.sports)
+   team.save()
     .then(() => {
+        
+            Sports.findById(req.body.sports, (err, sports) =>{
+                sports.teams.push(team);
+                sports.save();
+            })
+            
+        
         res.redirect("/teams/index");
     })
     .catch((err) => {
@@ -57,8 +66,6 @@ exports.teams_details_get = (req, res) => {
     })
     
 };
-
-
 
 // API for EDIT - GET and PUT
 

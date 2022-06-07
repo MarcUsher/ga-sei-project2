@@ -1,9 +1,10 @@
 const {Sports} = require("../models/Sports");
+const {Team} = require("../models/Team");
 const moment = require('moment');
 
 // All Sports Index - GET request
 exports.sports_index_get = (req, res) => {
-    Sports.find()
+    Sports.find().populate("teams")
     .then((sports) => {
         res.render("sports/index", {sports, moment})
     })
@@ -37,7 +38,7 @@ exports.sports_add_post = (req, res) => {
 
 // show sport Details - when user clicks on a sport
 exports.sports_details_get = (req, res) => {
-    Sports.findById(req.query.id)
+    Sports.findById(req.query.id).populate("teams")
     .then((sports)=>{
         res.render("sports/detail", {sports, moment});
     })

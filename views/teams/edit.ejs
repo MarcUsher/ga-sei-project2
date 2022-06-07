@@ -5,16 +5,7 @@
         <label>Name</label>
         <input type="text" name="name" value="<%= team.name%>" />
     </div>
-    <div>
-        <label>Sport</label>
-        <select name="sports" class="form-control">
-
-            <% sports.forEach(function(sports){ %> 
-            <option value="<%= sports._id%>"><%= sports.name%></option>
-            <% }) %>
-            
-        </select>
-    </div>
+    
     <div>
         <label>Borough</label>
         <input type="text" name="borough" value="<%= team.borough%>" />
