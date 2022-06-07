@@ -1,28 +1,28 @@
 <h2>Add A Sport</h2>
 <form method="POST" action="/sports/add">
 
-    <div>
+    <div class="form-group">
         <label>Name</label>
-        <input type="text" name="name" />
+        <input type="text" name="name" class="form-control" />
     </div>
     <!-- <div>
         <label>Teams</label>
         <input type="text" name="teams" />
     </div> -->
-    <div>
+    <div class="form-group">
         <label>Boroughs</label>
-        <input type="text" name="boroughs" />
+        <input type="text" name="boroughs" class="form-control" />
     </div>
-    <div>
+    <div class="form-group">
         <label>Description</label>
-        <textarea name="description"></textarea>
+        <textarea name="description" class="form-control"></textarea>
     </div>
-    <div>
+    <div class="form-group">
         <label>Image URL</label>
-        <input type="text" name="imageUrl" />
+        <input type="text" name="imageUrl"  class="form-control"/>
     </div>
     <br>
-    <button type="submit">Add Sport</button>
+    <button class="sportsButton form-control" type="submit">Add Sport</button>
 
 
 </form>
