@@ -36,7 +36,7 @@ exports.teams_add_post = (req, res) => {
     let team = new Team(req.body);
     console.log(req.body)
     console.log(req.body.sports)
-   team.save()
+    team.save()
     .then(() => {
         
             Sports.findById(req.body.sports, (err, sports) =>{
@@ -116,3 +116,26 @@ exports.teams_delete_get = (req, res) => {
         res.send("Sorry there was an error");
     })
 }
+
+// Need to add this in to DELETE API to remove the Team ID from the sports.teams array, to avoid a bloated dataset.
+
+
+// sports.teams.splice(index, 1);
+// sports.save();
+
+// Something like:
+// exports.teams_delete_get = (req, res) => {
+//     Team.findByIdAndDelete(req.query.id)
+//     .then(() => {
+//         Sports.findById(req.body.sports, (err, sports) =>{
+//                 let index = sports.teams.indexOf(req.query.id);               
+//                 sports.teams.splice(index, 1);
+//                 sports.save();
+//             }) 
+//         res.redirect("/teams/index");
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//         res.send("Sorry there was an error");
+//     })
+// }

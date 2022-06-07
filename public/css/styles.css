@@ -18,9 +18,22 @@ nav {
     justify-content: space-evenly;
 }
 
+.index-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn {
+    border-color: #38A3A5 ;
+    color: #38A3A5 ;
+    --bs-btn-hover-bg: #22577A;
+    --bs-btn-hover-border-color: #80ED99;
+}
+
 .teamsButton{
 background-color:#38A3A5 ;
 }
+
 .sportsButton{
     background-color:#38A3A5 ;
 
