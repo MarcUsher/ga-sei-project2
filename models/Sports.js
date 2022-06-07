@@ -3,7 +3,10 @@ const mongoose = require('mongoose');
 
 const sportSchema = mongoose.Schema({
     name: String,
-    // teams: String,
+    teams: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Team'
+    }], // teams: String,
     boroughs: String,
     description: String,
     imageUrl: String,

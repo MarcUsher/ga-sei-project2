@@ -1,5 +1,8 @@
 <div><%= sports.name%></div>
-
+        <% sports.teams.forEach(function(teams){%>
+                
+                <div><%=team.name%></div>
+        <%})%>
         <div><%= sports.boroughs%></div>
         <div><%= sports.description%></div>
         <div><%= sports.imageUrl%></div>
