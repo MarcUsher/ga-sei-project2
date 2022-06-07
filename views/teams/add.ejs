@@ -6,8 +6,14 @@
         <input type="text" name="name" />
     </div>
     <div>
-        <label>Sport</label>
-        <input type="text" name="sport" />
+        <label>Sports</label>
+        <select name="sports" class="form-control">
+
+            <% sports.forEach(function(sports){ %> 
+            <option value="<%= sports._id%>"><%= sports.name%></option>
+            <% }) %>
+            
+        </select>
     </div>
     <div>
         <label>Borough</label>

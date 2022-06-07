@@ -1,4 +1,4 @@
-const Sports = require("../models/Sports");
+const {Sports} = require("../models/Sports");
 const moment = require('moment');
 
 // All Sports Index - GET request

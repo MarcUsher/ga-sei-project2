@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const sportSchema = mongoose.Schema({
     name: String,
-    teams: String,
+    // teams: String,
     boroughs: String,
     description: String,
     imageUrl: String,
@@ -13,6 +13,6 @@ const sportSchema = mongoose.Schema({
     timestamps: true
 });
 
-const Sports = mongoose.model("Sport", sportSchema);
+const Sports = mongoose.model("Sports", sportSchema);
 
-module.exports = Sports;
+module.exports = {Sports};

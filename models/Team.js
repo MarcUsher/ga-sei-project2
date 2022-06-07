@@ -4,7 +4,10 @@ const mongoose = require('mongoose');
 
 const teamSchema = mongoose.Schema({
     name: String,
-    sport: String,
+    sports: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Sports'
+    },
     borough: String,
     description: String,
     minAge: Number,
@@ -21,4 +24,4 @@ const teamSchema = mongoose.Schema({
 
 const Team = mongoose.model("Team", teamSchema);
 
-module.exports = Team;
+module.exports = {Team};

@@ -1,9 +1,11 @@
-const Team = require("../models/Team");
+const {Team} = require("../models/Team");
+const {Sports} = require("../models/Sports")
 const moment = require('moment');
+
 
 // All Teams Index - GET request
 exports.teams_index_get = (req, res) => {
-    Team.find()
+    Team.find().populate('sports')
     .then((teams) => {
         res.render("teams/index", {teams, moment})
     })
@@ -19,7 +21,14 @@ exports.teams_index_get = (req, res) => {
 
 // Add team GET form
 exports.teams_add_get = (req, res) => {
-    res.render("teams/add");
+    Sports.find()
+    .then((sports) => {
+        res.render("teams/add", {sports});
+    })
+    .catch((err) => {
+        console.log(err);
+        res.send("Sorry there's an error")
+    })
 };
 
 
@@ -35,9 +44,10 @@ exports.teams_add_post = (req, res) => {
     });
 }
 
+
 // show Team Details - when user clicks on a team
 exports.teams_details_get = (req, res) => {
-    Team.findById(req.query.id)
+    Team.findById(req.query.id).populate('sports')
     .then((team)=>{
         res.render("teams/detail", {team, moment});
     })
@@ -54,9 +64,17 @@ exports.teams_details_get = (req, res) => {
 
 exports.teams_edit_get = (req, res) => {
 
-    Team.findById(req.query.id)
+    Team.findById(req.query.id).populate('sports')
     .then((team) => {
-        res.render("teams/edit", {team, moment})        
+        Sports.find()
+            .then((sports) => {
+                res.render("teams/edit", {sports, team, moment});
+            })
+            .catch((err) => {
+            console.log(err);
+            res.send("Sorry there's an error")
+        })
+        // res.render("teams/edit", {team, moment})        
     })
     .catch((err) => {
         console.log(err);
