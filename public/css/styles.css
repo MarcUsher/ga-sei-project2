@@ -1,0 +1,19 @@
+body {
+    background-color:#22577A;
+    max-width: 1200px;
+    color: #C7F9CC;
+    margin: 0 auto;
+}
+
+.no-style {
+    text-decoration: none;
+}
+
+a {
+    color: #57CC99;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+}
