@@ -70,7 +70,7 @@ exports.auth_logout_get = (req, res) => {
 
 
 
-// USER PROFILE - HTTP GET
+// USER PROFILE SHOW - HTTP GET
 exports.auth_profile_get = (req, res) => {
     res.render("auth/detail");
 };
@@ -89,4 +89,85 @@ exports.auth_profile_get = (req, res) => {
 //             });
 //         })
 // };
+
+
+
+// USER PROFILE UPDATE - HTTP GET & PUT
+exports.auth_edit_get = (req, res) => {
+
+    User.findById(req.query.id)
+    .then((user) => {
+        res.render("auth/edit", {user})        
+    })
+    .catch((err) => {
+        console.log(err);
+        res.send("Sorry there was an error");
+    })
+};
+
+exports.auth_edit_put = (req, res) => {
+    User.findByIdAndUpdate(req.body.id, req.body)
+    .then(() => {
+        res.redirect("/auth/profile")
+    })
+    .catch((err) => {
+        console.log(err);
+        res.send("Sorry there was an error");
+    })
+};
+
+
+
+// USER PASSWORD UPDATE - HTTP GET & PUT
+
+exports.auth_password_get = (req, res) => {
+    User.findById(req.query.id)
+    .then((user) => {
+        res.render("auth/password", {user})        
+    })
+    .catch((err) => {
+        console.log(err);
+        res.send("Sorry there was an error");
+    })
+};
+
+// exports.auth_password_post = (req, res, next) => {
+//     if (newPassword !== newPasswordConfirm) {
+//         req.flash("danger", "New password and password confirmation don't match!")
+//     }
+//     var user = req.user;
+//     user.password = newPassword;
+//     user.save(function(err){
+//          if (err) { next(err) }
+//          else {
+//              res.redirect('/auth/profile');
+//          }
+//      })
+// };
+
+exports.auth_password_put = (req, res, next) => {
+    if (req.body.newPassword !== req.body.newPasswordConfirm) {
+        req.flash("error", "New password and password confirmation don't match!")
+        res.redirect('/auth/password')
+    } else {
+        User.findByIdAndUpdate(req.body.id, req.body)
+        .then(() => {
+        var user = req.user;
+        let hashedPassword = bcrypt.hashSync(req.body.newPassword, salt);
+        user.password = hashedPassword;
+        user.save(function(err){
+            if (err) { next(err) }
+                else {
+                    res.redirect('/auth/profile');
+                }
+            })
+        })
+        .catch((err) => {
+            console.log(err);
+            res.send("Sorry there was an error");
+        })
+    }
+};
+
+
 
