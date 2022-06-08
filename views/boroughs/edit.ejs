@@ -1,0 +1,27 @@
+<h2>Edit Borough: <%= borough.name%></h2>
+<form method="POST" action="/boroughs/update?_method=PUT">
+
+    <div>
+        <label>Name</label>
+        <input type="text" name="name" value="<%= borough.name%>" />
+    </div>
+    <div>
+        <label>Postcodes</label>
+        <textarea name="postcodes"><%= borough.postcodes%></textarea>
+    </div>
+    <div>
+        <label>Sports</label>
+        <input type="text" name="sports" value="<%= borough.sports%>" />
+    </div>
+    <div>
+        <label>Teams</label>
+        <input type="text" name="teams" value="<%= borough.teams%>" />
+    </div>
+
+    <input type="hidden" name="id" value="<%= borough._id%>" />
+
+    <br>
+    <button type="submit">Update Borough</button>
+
+
+</form>z

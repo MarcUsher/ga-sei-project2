@@ -1,0 +1,20 @@
+<h1>All Teams</h1>
+
+<div class="index-container teams-container">
+    <% teams.forEach(function(team) { %>
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"><%= team.name%></h5>
+              <h6 class="card-subtitle mb-2 text-muted"><%= team.sports.name%></h6>
+              <p class="card-text"><%= team.description%></p>
+              <p class="card-text">Minimum Age: <%= team.minAge%></p>
+              <p class="card-text">Level: <%= team.level%></p>
+              <a href="/teams/detail?id=<%=team.id%>" class="card-link">Find out more about <%= team.name%></a>
+            </div>
+          </div>
+
+    <% }) %>
+    
+</div>
+

@@ -1,0 +1,45 @@
+<h2>Edit <%= team.name%></h2>
+<form method="POST" action="/teams/update?_method=PUT">
+
+    <div>
+        <label>Name</label>
+        <input type="text" name="name" value="<%= team.name%>" />
+    </div>
+    
+    <div>
+        <label>Borough</label>
+        <input type="text" name="borough" value="<%= team.borough%>" />
+    </div>
+    <div>
+        <label>Description</label>
+        <textarea name="description" value="<%= team.description%>"></textarea>
+    </div>
+    <div>
+        <label>Minimum Age</label>
+        <input type="number" name="minAge" value="<%= team.minAge%>" />
+    </div>
+    <div>
+        <label>Level</label>
+        <input type="text" name="level" value="<%= team.level%>" />
+    </div>
+    <div>
+        <label>Contact Email</label>
+        <input type="email" name="contactEmail" value="<%= team.contactEmail%>" />
+    </div>
+    <div>
+        <label>Contact Phone Number</label>
+        <input type="text" name="contactPhone" value="<%= team.contactPhone%>" />
+    </div>
+    <div>
+        <label>Address</label>
+        <input type="text" name="address" value="<%= team.address%>" />
+    </div>
+
+    <input type="hidden" name="id" value="<%= team._id%>" />
+
+    <br>
+
+    <button type="submit" class="btn btn-outline-primary">Add Team</button>
+
+
+</form>

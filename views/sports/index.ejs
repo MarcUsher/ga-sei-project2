@@ -1,0 +1,15 @@
+<h1>All Sports</h1>
+
+<div class="index-container sports-container">
+<% sports.forEach(function(sports) { %>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= sports.name%></h5>
+          <p class="card-text"><%= sports.description%></p>
+          <a href="/sports/detail?id=<%=sports.id%>" class="card-link">Find out more</a>
+        </div>
+      </div>
+
+<% }) %>
+</div>

@@ -1,0 +1,35 @@
+<h1>All Boroughs</h1>
+
+<table>
+
+    <tr>
+        <th>Name</th>
+        <th>Postcodes</th>
+        <th>Sports</th>
+        <th>Teams</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>Created At</th>
+        <th>Updated At</th>
+    </tr>
+
+<% boroughs.forEach(function(borough) { %>
+
+    <tr>
+        <td><a href="/boroughs/detail?id=<%=borough.id%>"><%= borough.name%></a></td>
+        <td><%= borough.postcodes%></td>
+        <td><%= borough.sports%></td>
+        <td><%= borough.teams%></td>
+        <td>
+            <a href="/boroughs/edit?id=<%=borough.id%>">Edit</a>
+        </td>
+        <td>
+            <a href="/boroughs/delete?id=<%=borough.id%>">Delete</a>
+        </td>
+        <td><%= moment(borough.createdAt).fromNow() %></td>
+        <td><%= moment(borough.updatedAt).fromNow() %></td>
+    </tr>
+
+<% }) %>
+
+</table>

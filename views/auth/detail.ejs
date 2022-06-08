@@ -1,0 +1,6 @@
+<h2>Your Profile</h2>
+<div>First Name: <%= currentUser.firstName%></div>
+<div>Last Name: <%= currentUser.lastName%></div>
+<div>Email: <%= currentUser.emailAddress%></div>
+<a href="/auth/edit?id=<%=currentUser.id%>"><button type="menu" class="btn btn-outline-primary">Edit Profile</button></a>
+<a href="/auth/password?id=<%=currentUser.id%>"><button type="menu" class="btn btn-outline-primary">Update Password</button></a>

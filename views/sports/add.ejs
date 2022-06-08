@@ -1,0 +1,30 @@
+<h2>Add A Sport</h2>
+<form method="POST" action="/sports/add">
+
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" name="name" class="form-control" />
+    </div>
+    <!-- <div>
+        <label>Teams</label>
+        <input type="text" name="teams" />
+    </div> -->
+    <div class="form-group">
+        <label>Boroughs</label>
+        <input type="text" name="boroughs" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea name="description" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Image URL</label>
+        <input type="text" name="imageUrl"  class="form-control"/>
+    </div>
+
+    <input type="hidden" name="createdBy" value="<%= currentUser.id%>" />
+    <br>
+    <button class="btn btn-outline-primary" type="submit">Add Sport</button>
+
+
+</form>

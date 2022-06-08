@@ -1,0 +1,14 @@
+<h2><%= team.name%></h2>
+<div>Sport: <a href="/sports/detail?id=<%= team.sports.id%>"><%= team.sports.name%></a></div>
+<div>Borough: <%= team.borough%></div>
+<div>Minimum Age: <%= team.minAge%></div>
+<div>Description: <%= team.description%></div>
+<div>Team Level: <%= team.level%></div>
+<div>Address: <%= team.address%></div>
+<div>Contact Email: <%= team.contactEmail%></div>
+<div>Contact Phone: <%= team.contactPhone%></div>
+<hr>
+<div>Created By: <%= team.createdBy.firstName%> <%= team.createdBy.lastName%></div>
+<hr>
+<div>Created at: <%= moment(team.createdAt).fromNow() %></div>
+<div>Updated at: <%= moment(team.updatedAt).fromNow() %></div>
