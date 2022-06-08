@@ -9,23 +9,57 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <div>
+    <% if(alerts.success) { %>
+        <% alerts.success.forEach(function(msg) { %>
+            <div class="alert alert-sucess" role="alert">
+                <%= msg %>
+            </div>
+        <% }) %>
+    <% } %>
+    <% if(alerts.error) { %>
+        <% alerts.error.forEach(function(msg) { %>
+            <div class="alert alert-danger" role="danger">
+                <%= msg %>
+            </div>
+        <% }) %>
+    <% } %>
+    <div class="container top-container">
         <h1><a class="no-style" href="/">London Teams Logo</a></h1>
-        <!-- Add Signup/Sign in/Logout later -->
+        <div>
+            <% if(currentUser) { %>
+                Hi <%= currentUser.firstName%> <%= currentUser.lastName %>
+                <a href="/auth/logout"><button type="menu" class="btn btn-outline-primary">Logout</button></a>
+            <% } else { %>
+                <a href="/auth/signup"><button type="menu" class="btn btn-outline-primary">Sign Up</button></a>
+                <a href="/auth/signin"><button type="menu" class="btn btn-outline-primary">Sign In</button></a>
+            <% } %>
+        </div>
     </div>
     <hr>
     <div>
         <nav>
-            <a href="/teams/index"><button type="menu" class="btn btn-outline-primary">All Teams</button></a>
-            <a href="/teams/add"><button type="menu" class="btn btn-outline-primary">Add Team</button></a>
-            <a href="/sports/add"><button type="menu" class="btn btn-outline-primary">Add Sport</button></a>
-            <a href="/sports/index"><button type="menu" class="btn btn-outline-primary">All Sports</button></a>
-            <!-- <a href="/boroughs/index">All Boroughs</a>
-            <a href="/boroughs/add">Add Borough</a> -->
+            <div>
+                <a href="/teams/index"><button type="menu" class="btn btn-outline-primary">All Teams</button></a>
+                <% if(currentUser) { %>
+                    <a href="/teams/add"><button type="menu" class="btn btn-outline-primary">Add Team</button></a>
+                <% } %>
+            </div>
+            <div>
+                <a href="/sports/index"><button type="menu" class="btn btn-outline-primary">All Sports</button></a>
+                <% if(currentUser) { %>
+                <a href="/sports/add"><button type="menu" class="btn btn-outline-primary">Add Sport</button></a>
+                <% } %>
+            </div>
         </nav>
     </div>
     <hr>
 
     <%- body%>
+
+    <script
+			  src="https://code.jquery.com/jquery-3.6.0.min.js"
+			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			  crossorigin="anonymous"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

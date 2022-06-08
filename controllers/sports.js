@@ -1,6 +1,7 @@
 const {Sports} = require("../models/Sports");
 const {Team} = require("../models/Team");
 const moment = require('moment');
+const isLoggedIn = require('../helper/isLoggedIn');
 
 // All Sports Index - GET request
 exports.sports_index_get = (req, res) => {

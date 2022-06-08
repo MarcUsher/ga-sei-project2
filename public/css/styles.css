@@ -23,6 +23,11 @@ nav {
     justify-content: space-evenly;
 }
 
+.top-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 .btn {
     border-color: #38A3A5 ;
     color: #38A3A5 ;
