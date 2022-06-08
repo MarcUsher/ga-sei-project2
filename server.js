@@ -22,8 +22,19 @@ app.use(session({
     saveUninitialized: true,
     resave: false,
     cookie: {maxAge:3600000} 
+}));
 
-}))
+// Initialize Session & Passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+// Share session information with all pages
+app.use(function(req, res, next) {
+    res.locals.alerts = req.flash();
+    res.locals.currentUser = req.user;
+    next();
+});
 
 
 // Import Routes
