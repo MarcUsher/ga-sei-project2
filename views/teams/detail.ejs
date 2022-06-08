@@ -1,5 +1,5 @@
 <h2><%= team.name%></h2>
-<div>Sport: <%= team.sports.name%></div>
+<div>Sport: <a href="/sports/detail?id=<%= team.sports.id%>"><%= team.sports.name%></a></div>
 <div>Borough: <%= team.borough%></div>
 <div>Minimum Age: <%= team.minAge%></div>
 <div>Description: <%= team.description%></div>

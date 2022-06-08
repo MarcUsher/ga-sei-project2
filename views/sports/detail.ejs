@@ -1,12 +1,13 @@
 <h2><%= sports.name%></h2>
-<div> Teams playing this sport: 
-        <% sports.teams.forEach(function(teams){%>
-                <div><%=teams.name%></div>
-        <%})%>
-</div>
 <div>Borough: <%= sports.boroughs%></div>
 <div>Sport Description: <%= sports.description%></div>
 <div>Sport Image URL: <%= sports.imageUrl%></div>
+<hr>
+<div> Teams playing this sport: 
+        <% sports.teams.forEach(function(teams){%>
+                <div><a href="/teams/detail?id=<%= teams.id%>"><%=teams.name%></a></div>
+        <%})%>
+</div>
 <hr>
 <div>Created By: <%= sports.createdBy.firstName%> <%= sports.createdBy.lastName%></div>
 <hr>
