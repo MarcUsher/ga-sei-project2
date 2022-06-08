@@ -18,7 +18,7 @@ const PORT = process.env.PORT;
 let session = require('express-session')
 let passport =require('./helper/ppConfig');
 app.use(session({
-    secret: process.env.SECRETE,
+    secret: process.env.SECRET,
     saveUninitialized: true,
     resave: false,
     cookie: {maxAge:3600000} 
