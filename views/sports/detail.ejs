@@ -1,11 +1,14 @@
-<div><%= sports.name%></div>
+<h2><%= sports.name%></h2>
+<div> Teams playing this sport: 
         <% sports.teams.forEach(function(teams){%>
-                
                 <div><%=teams.name%></div>
         <%})%>
-        <div><%= sports.boroughs%></div>
-        <div><%= sports.description%></div>
-        <div><%= sports.imageUrl%></div>
-        <hr>
-        <div>Created at: <%= moment(sports.createdAt).fromNow() %></div>
-        <div>Updated at: <%= moment(sports.updatedAt).fromNow() %></div>
+</div>
+<div>Borough: <%= sports.boroughs%></div>
+<div>Sport Description: <%= sports.description%></div>
+<div>Sport Image URL: <%= sports.imageUrl%></div>
+<hr>
+<div>Created By: <%= sports.createdBy.firstName%> <%= sports.createdBy.lastName%></div>
+<hr>
+<div>Created at: <%= moment(sports.createdAt).fromNow() %></div>
+<div>Updated at: <%= moment(sports.updatedAt).fromNow() %></div>

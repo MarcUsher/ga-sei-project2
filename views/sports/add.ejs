@@ -21,6 +21,8 @@
         <label>Image URL</label>
         <input type="text" name="imageUrl"  class="form-control"/>
     </div>
+
+    <input type="hidden" name="createdBy" value="<%= currentUser.id%>" />
     <br>
     <button class="btn btn-outline-primary" type="submit">Add Sport</button>
 

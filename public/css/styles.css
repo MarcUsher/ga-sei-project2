@@ -21,11 +21,14 @@ nav {
 .index-container {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .top-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
 }
 
 .btn {

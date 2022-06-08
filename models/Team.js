@@ -15,7 +15,10 @@ const teamSchema = mongoose.Schema({
     contactEmail: String,
     contactPhone: String,
     address: String,
-    // createdBy: ref user id
+    createdBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }
 }, {
     timestamps: true
 });

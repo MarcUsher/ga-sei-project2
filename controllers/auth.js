@@ -1,4 +1,8 @@
-const User = require("../models/User");
+const {Team} = require("../models/Team");
+const {Sports} = require("../models/Sports")
+const {User} = require("../models/User");
+
+const isLoggedIn = require('../helper/isLoggedIn');
 
 const bcrypt = require("bcrypt");
 const res = require("express/lib/response");
@@ -63,4 +67,26 @@ exports.auth_logout_get = (req, res) => {
         res.redirect("/");
     });
 }
+
+
+
+// USER PROFILE - HTTP GET
+exports.auth_profile_get = (req, res) => {
+    res.render("auth/detail");
+};
+
+
+// exports.auth_profile_get = (req, res) => {
+//     Team.find()
+//     .then((team) => {
+//         Sports.find()
+//             .then((sports) => {
+//                 res.render("auth/detail", {sports, team});
+//             })
+//             .catch((err) => {
+//                 console.log(err);
+//                 res.send("Sorry there's an error")
+//             });
+//         })
+// };
 

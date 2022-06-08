@@ -1,5 +1,7 @@
 const {Sports} = require("../models/Sports");
 const {Team} = require("../models/Team");
+const {User} = require("../models/User");
+
 const moment = require('moment');
 const isLoggedIn = require('../helper/isLoggedIn');
 
@@ -39,7 +41,7 @@ exports.sports_add_post = (req, res) => {
 
 // show sport Details - when user clicks on a sport
 exports.sports_details_get = (req, res) => {
-    Sports.findById(req.query.id).populate("teams")
+    Sports.findById(req.query.id).populate("teams").populate("createdBy")
     .then((sports)=>{
         res.render("sports/detail", {sports, moment});
     })

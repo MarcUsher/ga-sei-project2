@@ -6,12 +6,14 @@ const sportSchema = mongoose.Schema({
     teams: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Team'
-    }], // teams: String,
+    }],
     boroughs: String,
     description: String,
     imageUrl: String,
-    createdBy: String
-    // createdBy: ref user id
+    createdBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }
 }, {
     timestamps: true
 });

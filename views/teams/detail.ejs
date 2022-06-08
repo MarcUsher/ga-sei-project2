@@ -1,4 +1,4 @@
-<div>Name: <%= team.name%></div>
+<h2><%= team.name%></h2>
 <div>Sport: <%= team.sports.name%></div>
 <div>Borough: <%= team.borough%></div>
 <div>Minimum Age: <%= team.minAge%></div>
@@ -7,6 +7,8 @@
 <div>Address: <%= team.address%></div>
 <div>Contact Email: <%= team.contactEmail%></div>
 <div>Contact Phone: <%= team.contactPhone%></div>
+<hr>
+<div>Created By: <%= team.createdBy.firstName%> <%= team.createdBy.lastName%></div>
 <hr>
 <div>Created at: <%= moment(team.createdAt).fromNow() %></div>
 <div>Updated at: <%= moment(team.updatedAt).fromNow() %></div>

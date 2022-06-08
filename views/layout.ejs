@@ -28,6 +28,7 @@
         <div>
             <% if(currentUser) { %>
                 Hi <%= currentUser.firstName%> <%= currentUser.lastName %>
+                <a href="/auth/profile"><button type="menu" class="btn btn-outline-primary">View Profile</button></a>
                 <a href="/auth/logout"><button type="menu" class="btn btn-outline-primary">Logout</button></a>
             <% } else { %>
                 <a href="/auth/signup"><button type="menu" class="btn btn-outline-primary">Sign Up</button></a>
