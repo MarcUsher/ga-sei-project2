@@ -14,6 +14,17 @@ app.set("view engine", "ejs");
 // create port
 const PORT = process.env.PORT;
 
+// add passport auth code:
+let session = require('express-session')
+let passport =require('./helper/ppConfig');
+app.use(session({
+    secret: process.env.SECRETE,
+    saveUninitialized: true,
+    resave: false,
+    cookie: {maxAge: 3600000} 
+
+}))
+
 
 // Import Routes
 const indexRouter = require("./routes/index");
