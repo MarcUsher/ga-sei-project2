@@ -21,7 +21,6 @@ router.get("/auth/profile", authCtrl.auth_profile_get);
 router.get("/auth/edit", authCtrl.auth_edit_get);
 router.put("/auth/update", authCtrl.auth_edit_put);
 router.get("/auth/password", authCtrl.auth_password_get);
-router.post("/auth/password", authCtrl.auth_signin_post);
 router.put("/auth/newpassword", authCtrl.auth_password_put);
 
 module.exports = router;
