@@ -106,6 +106,30 @@ form {
 }
 
 
+.forms-teams-sports {
+    background-color: #CAE9FF;
+    }
+    
+    .card {
+        background-color: #CAE9FF;
+        color: #1B4965;
+        margin: 0 5px 10px 5px;
+    }
+    
+    .stamp {
+        color: red;
+    }
+    
+    
+    .detailsPage {
+        color: #5FA8D3;
+    }
+    
+    .detailsHeader {
+        color: #5FA8D3;
+    }
+
+
 @media (max-width: 768px) {
     .top-container {
         flex-direction: column;
@@ -131,26 +155,4 @@ form {
         flex-direction: column;
         align-items: center;
     }
-
-.forms-teams-sports {
-background-color: #CAE9FF;
-}
-
-.card {       /*displays each sport/team snapshot in a card*/
-    background-color: #CAE9FF; /*#BEE9E8*/
-    color: #1B4965;
-}
-
-.stamp {
-    color: red;
-}
-
-
-.detailsPage {
-
-color: #5FA8D3;
-}
-
-.detailsHeader {
-    color: #5FA8D3;
 }
