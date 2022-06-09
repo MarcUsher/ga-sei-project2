@@ -1,32 +1,41 @@
-<h2>Edit <%= sports.name%></h2>
+<h2 class="form-header">Edit <%= sports.name%></h2>
 <form method="POST" action="/sports/update?_method=PUT">
 
-    <div>
-        <label>Name</label>
-        <input type="text" name="name" value="<%= sports.name%>" />
+    
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" id="name" name="name" class="form-control" value="<%= sports.name%>" required/>
     </div>
-    <!-- <div>
-        <label>Teams</label>
-        <input type="text" name="teams" value="<%= sports.teams%>" />
-    </div> -->
-    <div>
-        <label>Borough</label>
-        <input type="text" name="boroughs" value="<%= sports.boroughs%>" />
+    <div class="mb-3">
+        <label for="borough" class="form-label">Borough</label>
+        <select id="borough" name="borough" class="form-select" value="<%= sports.boroughs%>" required>
+            <option selected disabled hidden>Choose a London Borough</option>
+            <option value="City of London">City of London</option>
+            <option value="Hackney">Hackney</option>
+            <option value="Hammersmith & Fulham">Hammersmith & Fulham</option>
+            <option value="Islington">Islington</option>
+            <option value="Kensington & Chelsea">Kensington & Chelsea</option>
+            <option value="Southwark">Southwark</option>
+            <option value="Westminister">Westminister</option>
+        </select>
+        <div id="boroughHelp" class="form-text">We currently only cover the central London boroughs, but hope to expand soon!</div>
     </div>
-    <div>
-        <label>Description</label>
-        <textarea name="description" value="<%= sports.description%>"></textarea>
+    <div class="mb-3">
+        <label for="description" class="form-label">Sport Description</label>
+        <textarea id="description" rows="8" cols="40" name="description" class="form-control" value="<%= sports.description%>" required><%= sports.description%></textarea>
     </div>
-    <div>
-        <label>Image URL</label>
-        <input type="text" name="imageUrl" value="<%= sports.imageUrl%>" />
+    <div class="mb-3">
+        <label for="imageUrl" class="form-label">Image URL</label>
+        <input type="text" id="imageUrl" name="imageUrl" class="form-control" value="<%= sports.imageUrl%>" required/>
     </div>
 
     <input type="hidden" name="id" value="<%= sports._id%>" />
 
     <br>
 
-    <button type="submit" class="btn btn-outline-primary">Add sports</button>
-
+    <button type="submit" class="btn btn-outline-primary">Update Sport</button>
 
 </form>
+
+<br>
+<br>

@@ -9,7 +9,7 @@ const isLoggedIn = require('../helper/isLoggedIn');
 exports.sports_index_get = (req, res) => {
     Sports.find().populate("teams")
     .then((sports) => {
-        res.render("sports/index", {sports, moment})
+        res.status(200).render("sports/index", {sports, moment})
     })
     .catch((err) => {
         console.log(err);
@@ -23,7 +23,7 @@ exports.sports_index_get = (req, res) => {
 
 // Add Sport GET form
 exports.sports_add_get = (req, res) => {
-    res.render("sports/add");
+    res.status(200).render("sports/add");
 };
 
 
@@ -43,7 +43,7 @@ exports.sports_add_post = (req, res) => {
 exports.sports_details_get = (req, res) => {
     Sports.findById(req.query.id).populate("teams").populate("createdBy")
     .then((sports)=>{
-        res.render("sports/detail", {sports, moment});
+        res.status(200).render("sports/detail", {sports, moment});
     })
     .catch((err)=>{
         console.log(err);
@@ -60,7 +60,7 @@ exports.sports_edit_get = (req, res) => {
 
     Sports.findById(req.query.id)
     .then((sports) => {
-        res.render("sports/edit", {sports, moment})        
+        res.status(200).render("sports/edit", {sports, moment})        
     })
     .catch((err) => {
         console.log(err);

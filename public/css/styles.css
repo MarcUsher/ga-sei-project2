@@ -3,6 +3,7 @@ body {
     max-width: 1200px;
     color: black;
     margin: 0 auto;
+    font-family: 'Raleway', sans-serif;
 }
 
 .no-style {
@@ -11,11 +12,52 @@ body {
 
 a {
     color: #5FA8D3;
+    text-decoration: none;
 }
+
+a:hover {
+    color: #1B4965;
+  }
 
 nav {
     display: flex;
     justify-content: space-evenly;
+}
+
+.container {
+    display: flex;
+}
+
+.home-container {
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-container {
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.home-title {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+.home-info {
+    justify-content: space-evenly;
+}
+
+.home-card {
+    background-color: #62B6CB;
+    border-radius: 15px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.6);
+    color: #fff;
+    margin: 20px 10px;
+    padding: 20px;
+    width: 50%;
 }
 
 .index-container {
@@ -24,54 +66,91 @@ nav {
     flex-wrap: wrap;
 }
 
-.top-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0;
-}
-
 .btn {
     border-color: #1B4965;
     color: #1B4965;
     --bs-btn-hover-bg: #5FA8D3;
     --bs-btn-hover-border-color: #5FA8D3;
+    margin: 0px 10px;
 }
 
 .teamsButton{
-background-color:#1B4965 ;
+background-color:#1B4965;
 }
 
 .sportsButton{
-    background-color:#1B4965 ;
-
+    background-color:#1B4965;
 }
 
-.forms-teams-sports{
+.profile {
+    display: flex;
+}
+
+.profile-info {
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-tables {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.form-header {
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    .top-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-info {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .home-card {
+        width: 100%;
+    }
+
+    .profile-tables {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+.forms-teams-sports {
 background-color: #CAE9FF;
 }
 
-.card{       /*displays each sport/team snapshot in a card*/
+.card {       /*displays each sport/team snapshot in a card*/
     background-color: #CAE9FF; /*#BEE9E8*/
     color: #1B4965;
 }
 
-.stamp{
+.stamp {
     color: red;
 }
 
 
-.detailsPage{
+.detailsPage {
 
 color: #5FA8D3;
 }
 
-.detailsHeader{
+.detailsHeader {
     color: #5FA8D3;
-}
-
-/*for index pages*/
-.indexPage{
-
-color: #CAE9FF;
 }
