@@ -1,4 +1,4 @@
-<h2>Edit <%= sports.name%></h2>
+<h2 class="form-header">Edit <%= sports.name%></h2>
 <form method="POST" action="/sports/update?_method=PUT">
 
     
@@ -9,7 +9,7 @@
     <div class="mb-3">
         <label for="borough" class="form-label">Borough</label>
         <select id="borough" name="borough" class="form-select" value="<%= sports.boroughs%>" required>
-            <option selected>Choose a London Borough</option>
+            <option selected disabled hidden>Choose a London Borough</option>
             <option value="City of London">City of London</option>
             <option value="Hackney">Hackney</option>
             <option value="Hammersmith & Fulham">Hammersmith & Fulham</option>

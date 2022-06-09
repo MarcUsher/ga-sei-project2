@@ -15,7 +15,7 @@ const passport = require("../helper/ppConfig");
 
 // SIGN UP - HTTP GET
 exports.auth_signup_get = (req, res) => {
-    res.render("auth/signup");
+    res.status(200).render("auth/signup");
 };
 
 
@@ -43,7 +43,7 @@ exports.auth_signup_post = (req, res) => {
 
 // SIGN IN - HTTP GET
 exports.auth_signin_get = (req, res) => {
-    res.render("auth/signin");
+    res.status(200).render("auth/signin");
 };
 
 
@@ -75,7 +75,7 @@ exports.auth_logout_get = (req, res) => {
 
 // USER PROFILE SHOW - HTTP GET
 // exports.auth_profile_get = (req, res) => {
-//     res.render("auth/detail");
+//     res.status(200).render("auth/detail");
 // };
 
 
@@ -84,7 +84,7 @@ exports.auth_profile_get = (req, res) => {
     .then((team) => {
         Sports.find()
             .then((sports) => {
-                res.render("auth/detail", {sports, team});
+                res.status(200).render("auth/detail", {sports, team});
             })
             .catch((err) => {
                 console.log(err);
@@ -100,7 +100,7 @@ exports.auth_edit_get = (req, res) => {
 
     User.findById(req.query.id)
     .then((user) => {
-        res.render("auth/edit", {user})        
+        res.status(200).render("auth/edit", {user})        
     })
     .catch((err) => {
         console.log(err);
@@ -126,7 +126,7 @@ exports.auth_edit_put = (req, res) => {
 exports.auth_password_get = (req, res) => {
     User.findById(req.query.id)
     .then((user) => {
-        res.render("auth/password", {user})        
+        res.status(200).render("auth/password", {user})        
     })
     .catch((err) => {
         console.log(err);

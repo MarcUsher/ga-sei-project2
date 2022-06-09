@@ -10,7 +10,7 @@ const isLoggedIn = require('../helper/isLoggedIn');
 exports.teams_index_get = (req, res) => {
     Team.find().populate('sports')
     .then((teams) => {
-        res.render("teams/index", {teams, moment})
+        res.status(200).render("teams/index", {teams, moment})
     })
     .catch((err) => {
         console.log(err);
@@ -26,7 +26,7 @@ exports.teams_index_get = (req, res) => {
 exports.teams_add_get = (req, res) => {
     Sports.find()
     .then((sports) => {
-        res.render("teams/add", {sports});
+        res.status(200).render("teams/add", {sports});
     })
     .catch((err) => {
         console.log(err);
@@ -61,7 +61,7 @@ exports.teams_add_post = (req, res) => {
 exports.teams_details_get = (req, res) => {
     Team.findById(req.query.id).populate('sports').populate("createdBy")
     .then((team)=>{
-        res.render("teams/detail", {team, moment});
+        res.status(200).render("teams/detail", {team, moment});
     })
     .catch((err)=>{
         console.log(err);
@@ -78,13 +78,13 @@ exports.teams_edit_get = (req, res) => {
     .then((team) => {
         Sports.find()
             .then((sports) => {
-                res.render("teams/edit", {sports, team, moment});
+                res.status(200).render("teams/edit", {sports, team, moment});
             })
             .catch((err) => {
             console.log(err);
             res.send("Sorry there's an error")
         })
-        // res.render("teams/edit", {team, moment})        
+        // res.status(200).render("teams/edit", {team, moment})        
     })
     .catch((err) => {
         console.log(err);
