@@ -61,11 +61,14 @@ exports.auth_signin_post =
 
 // LOGOUT ROUTE - HTTP GET
 exports.auth_logout_get = (req, res) => {
-    req.logout(function(err) {
-        if (err) {return next(err); }
-        req.flash("success", "You have successfully logged out!")
-        res.redirect("/");
-    });
+    // req.logout(function(err) {
+    //     if (err) {return next(err); }
+    //     req.flash("success", "You have successfully logged out!")
+    //     res.redirect("/");
+    // });
+    req.logout();
+    req.flash("success", "You have successfully logged out!");
+    res.redirect("/auth/signin");
 }
 
 

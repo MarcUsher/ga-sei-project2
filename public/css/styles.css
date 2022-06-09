@@ -11,11 +11,27 @@ body {
 
 a {
     color: #5FA8D3;
+    text-decoration: none;
 }
+
+a:hover {
+    color: #1B4965;
+  }
 
 nav {
     display: flex;
     justify-content: space-evenly;
+}
+
+.container {
+    display: flex;
+}
+
+.home-container {
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .index-container {
@@ -25,10 +41,13 @@ nav {
 }
 
 .top-container {
-    display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 10px 0;
+}
+
+.home-info {
+    justify-content: space-evenly;
 }
 
 .btn {
@@ -45,4 +64,8 @@ background-color:#1B4965 ;
 .sportsButton{
     background-color:#1B4965 ;
 
+}
+
+form {
+    width: 75%;
 }
