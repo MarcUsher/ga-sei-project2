@@ -1,0 +1,15 @@
+<h2 class="detailsHeader"><%= team.name%></h2>
+
+<div><p class="detailsFieldNames">Sport:</p><a href="/sports/detail?id=<%= team.sports.id%>"><%= team.sports.name%></a></div>
+<div><p class="detailsFieldNames">Borough:</p><%= team.borough%></div>
+<div><p class="detailsFieldNames">Minimum Age:</p><%= team.minAge%></div>
+<div>Description: <%= team.description%></div>
+<div>Team Level: <%= team.level%></div>
+<div>Address: <%= team.address%></div>
+<div>Contact Email: <%= team.contactEmail%></div>
+<div>Contact Phone: <%= team.contactPhone%></div>
+<hr>
+<div>Created By: <%= team.createdBy.firstName%> <%= team.createdBy.lastName%></div>
+<hr>
+<div>Created at: <%= moment(team.createdAt).fromNow() %></div>
+<div>Updated at: <%= moment(team.updatedAt).fromNow() %></div>
