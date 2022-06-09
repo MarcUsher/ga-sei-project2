@@ -1,6 +1,8 @@
 # Project 02: Full Stack Application
 # Richard Afrane-Kesey& Marc Usher
 
+**Deployed App on Heroku: [London Teams](https://londonteams.herokuapp.com/)**
+
 ## Introduction
 For this Node.js full stack application project, my partner and I discussed suitable ideas for the web app and we decided to work on a full stack web app that would allow users to browse local/community sport teams in London Boroughs.
 
