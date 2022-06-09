@@ -5,9 +5,10 @@ const expressLayouts = require('express-ejs-layouts');
 require('dotenv').config();
 
 const app = express();
-
+const flash = require('connect-flash')
 app.use(expressLayouts);
 app.use(express.static("public"));
+app.use(flash())
 
 app.set("view engine", "ejs");
 
@@ -42,13 +43,13 @@ const indexRouter = require("./routes/index");
 const teamsRouter = require("./routes/teams");
 const sportsRouter = require("./routes/sports");
 const boroughRouter = require("./routes/boroughs")
-
+const authRouter = require("./routes/auth")
 // Mount Routes
 app.use("/", indexRouter);
 app.use("/", teamsRouter);
 app.use("/", sportsRouter);
 app.use("/", boroughRouter);
-
+app.use("/", authRouter);
 
 
 app.listen(PORT, () => {

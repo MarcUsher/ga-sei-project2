@@ -46,3 +46,32 @@ background-color:#1B4965 ;
     background-color:#1B4965 ;
 
 }
+
+.forms-teams-sports{
+background-color: #CAE9FF;
+}
+
+.card{       /*displays each sport/team snapshot in a card*/
+    background-color: #CAE9FF; /*#BEE9E8*/
+    color: #1B4965;
+}
+
+.stamp{
+    color: red;
+}
+
+
+.detailsPage{
+
+color: #5FA8D3;
+}
+
+.detailsHeader{
+    color: #5FA8D3;
+}
+
+/*for index pages*/
+.indexPage{
+
+color: #CAE9FF;
+}
