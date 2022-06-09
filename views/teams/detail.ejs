@@ -1,16 +1,20 @@
-<h2 class="detailsHeader"><%= team.name%></h2>
 
-<div>Sport:<a href="/sports/detail?id=<%= team.sports.id%>"><%= team.sports.name%></a></div>
-<div>Borough:<%= team.borough%></div>
-<div>Minimum Age:<%= team.minAge%></div>
-<div>Description: <%= team.description%></div>
-<div>Team Level: <%= team.level%></div>
-<div>Address: <%= team.address%></div>
-<div>Contact Email: <%= team.contactEmail%></div>
-<div>Contact Phone: <%= team.contactPhone%></div>
-<hr>
-<div class="stamp">Created By: <%= team.createdBy.firstName%> <%= team.createdBy.lastName%></div>
+<div class="detail-container">
+    <h2 class="detailsHeader"><%= team.name%></h2>
 
-<div class="stamp">Created at: <%= moment(team.createdAt).fromNow() %></div>
-<div class="stamp">Updated at: <%= moment(team.updatedAt).fromNow() %></div>
+    <div>Sport: <a href="/sports/detail?id=<%= team.sports.id%>"><%= team.sports.name%></a></div>
+    <div>Borough: <%= team.borough%></div>
+    <div>Minimum Age: <%= team.minAge%></div>
+    <div>Description: <%= team.description%></div>
+    <div>Team Level: <%= team.level%></div>
+    <div>Address: <%= team.address%></div>
+    <div>Contact Email: <%= team.contactEmail%></div>
+    <div>Contact Phone: <%= team.contactPhone%></div>
+    <hr>
+    <div class="stamp">Created By: <%= team.createdBy.firstName%> <%= team.createdBy.lastName%></div>
+    
+    <div class="stamp">Created at: <%= moment(team.createdAt).fromNow() %></div>
+    <div class="stamp">Updated at: <%= moment(team.updatedAt).fromNow() %></div>
+</div>
+
 

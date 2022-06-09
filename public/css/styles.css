@@ -105,6 +105,10 @@ form {
     text-align: center;
 }
 
+.detail-container {
+    width: 50%;
+    margin: 0 auto;
+}
 
 .forms-teams-sports {
     background-color: #CAE9FF;
@@ -127,6 +131,7 @@ form {
     
     .detailsHeader {
         color: #5FA8D3;
+        text-align: center;
     }
 
 
