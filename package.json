@@ -4,7 +4,8 @@
   "description": "London Teams Project",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodemon server",
+    "start": "node server"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,7 @@
     "method-override": "^3.0.0",
     "moment": "^2.29.3",
     "mongoose": "^6.3.5",
-    "passport": "^0.6.0",
+    "passport": "^0.5.2",
     "passport-local": "^1.0.0"
   }
 }

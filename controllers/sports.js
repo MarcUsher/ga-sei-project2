@@ -85,7 +85,7 @@ exports.sports_edit_put = (req, res) => {
 exports.sports_delete_get = (req, res) => {
     Sports.findByIdAndDelete(req.query.id)
     .then(() => {
-        res.redirect("/sports/index");
+        res.redirect("/auth/profile");
     })
     .catch((err) => {
         console.log(err);

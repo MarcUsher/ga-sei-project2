@@ -33,6 +33,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 // Share session information with all pages
 app.use(function(req, res, next) {
     res.locals.alerts = req.flash();

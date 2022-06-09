@@ -1,7 +1,7 @@
 body {
-    /*background-color:hsl(203, 32%, 92%);*/
+    /* background-color: #CAE9FF; */
     max-width: 1200px;
-    color: #C7F9CC;
+    color: black;
     margin: 0 auto;
 }
 
@@ -10,12 +10,28 @@ body {
 }
 
 a {
-    color: #57CC99;
+    color: #5FA8D3;
+    text-decoration: none;
 }
+
+a:hover {
+    color: #1B4965;
+  }
 
 nav {
     display: flex;
     justify-content: space-evenly;
+}
+
+.container {
+    display: flex;
+}
+
+.home-container {
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .index-container {
@@ -25,24 +41,31 @@ nav {
 }
 
 .top-container {
-    display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 10px 0;
 }
 
+.home-info {
+    justify-content: space-evenly;
+}
+
 .btn {
-    border-color: #38A3A5 ;
-    color: #38A3A5 ;
-    --bs-btn-hover-bg: #22577A;
-    --bs-btn-hover-border-color: #80ED99;
+    border-color: #1B4965;
+    color: #1B4965;
+    --bs-btn-hover-bg: #5FA8D3;
+    --bs-btn-hover-border-color: #5FA8D3;
 }
 
 .teamsButton{
-background-color:#38A3A5 ;
+background-color:#1B4965 ;
 }
 
 .sportsButton{
-    background-color:#38A3A5 ;
+    background-color:#1B4965 ;
 
+}
+
+form {
+    width: 75%;
 }

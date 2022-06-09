@@ -112,7 +112,7 @@ exports.teams_edit_put = (req, res) => {
 exports.teams_delete_get = (req, res) => {
     Team.findByIdAndDelete(req.query.id)
     .then(() => {
-        res.redirect("/teams/index");
+        res.redirect("/auth/profile");
     })
     .catch((err) => {
         console.log(err);
