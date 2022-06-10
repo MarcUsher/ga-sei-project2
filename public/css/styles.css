@@ -24,6 +24,14 @@ nav {
     justify-content: space-evenly;
 }
 
+/* .logo-container {
+    height: 20px;
+} */
+
+.logo {
+    height: 75px;
+}
+
 .container {
     display: flex;
 }
@@ -65,7 +73,7 @@ nav {
 }
 
 .home-card {
-    background-color: #62B6CB;
+    background-color: #434F5D;
     border-radius: 15px;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.6);
     color: #fff;
@@ -180,7 +188,7 @@ form {
 .footer{
     display: flex;
     align-items: baseline;
-    color: #5FA8D3;
+    color: #434F5D;
     font-weight: bolder;
     justify-content: center;
 }
