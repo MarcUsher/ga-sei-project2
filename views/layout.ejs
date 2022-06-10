@@ -28,11 +28,14 @@
     <div class="container top-container">
         <h1><a class="no-style" href="/">London Teams</a></h1>
         <div>
+            
             <% if(currentUser) { %>
                 Hi <%= currentUser.firstName%> <%= currentUser.lastName %>
+               
                 <a href="/auth/profile"><button type="menu" class="btn btn-outline-primary">View Profile</button></a>
                 <a href="/auth/logout"><button type="menu" class="btn btn-outline-primary">Logout</button></a>
             <% } else { %>
+               
                 <a href="/auth/signup"><button type="menu" class="btn btn-outline-primary">Sign Up</button></a>
                 <a href="/auth/signin"><button type="menu" class="btn btn-outline-primary">Sign In</button></a>
             <% } %>
@@ -41,6 +44,7 @@
     <hr>
     <div>
         <nav>
+            <a href="/"><button type="menu" class="btn btn-outline-primary">Home</button></a>
             <div>
                 <a href="/teams/index"><button type="menu" class="btn btn-outline-primary">All Teams</button></a>
                 <% if(currentUser) { %>
