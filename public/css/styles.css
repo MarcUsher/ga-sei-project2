@@ -42,12 +42,26 @@ nav {
 }
 
 .home-title {
-    font-size: 3rem;
-    line-height: 1.2;
+    font-size: 2rem;
+    
 }
 
 .home-info {
     justify-content: space-evenly;
+}
+
+.carousel-container{
+
+    display: flex;
+    justify-content: center;
+}
+
+.carousel{
+    width:75%;
+    /*display: flex;
+    justify-content: center;
+    
+    align-items: center;*/
 }
 
 .home-card {
@@ -121,7 +135,8 @@ form {
     }
     
     .stamp {
-        color: red;
+        color: #1B4965;
+        font-weight: bold;
     }
     
     
@@ -160,4 +175,12 @@ form {
         flex-direction: column;
         align-items: center;
     }
+}
+
+.footer{
+    display: flex;
+    align-items: baseline;
+    color: #5FA8D3;
+    font-weight: bolder;
+    justify-content: center;
 }
